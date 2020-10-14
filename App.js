@@ -38,21 +38,21 @@ const App: () => React$Node = () => {
   return (
     <View style={styles.container}>
       <View
-        style={{borderColor: 'black', borderBottomWidth: 2, borderTopWidth: 7}}>
+        style={{borderColor: 'black', borderBottomWidth: 2, borderTopWidth: 2, alignItems:'center'}}>
         <View>
           <Image source={Logo} style={styles.logo} />
         </View>
         <View>
-          <Text>SIGN IN</Text>
+          <Text style={{fontSize:40  }}>SIGN IN</Text>
         </View>
       </View>
 
-      <View>
+      <View style={styles.inputContainer}>
         <View>
-          <TextInput style={styles.input} />
+          <TextInput placeholder="Username" style={styles.input} />
         </View>
         <View>
-          <TextInput style={styles.input} />
+          <TextInput secureTextEntry={true} placeholder="Password" style={styles.input} />
         </View>
         <View>
           <View>
@@ -62,7 +62,7 @@ const App: () => React$Node = () => {
             <Text>I Agree to the terms and conditions</Text>
           </View>
         </View>
-        <View><TouchableOpacity><Text>LOGIN</Text></TouchableOpacity></View>
+        <View style={styles.button}><TouchableOpacity><Text style={{textAlign:'center',color:'white'}}>LOGIN</Text></TouchableOpacity></View>
       </View>
     </View>
   );
@@ -72,7 +72,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    alignItems:'center'
+    alignItems:'center',
+    justifyContent:'space-evenly'
+  },
+  button:{
+    padding:20,
+    borderRadius:10,
+    backgroundColor:'red'
+  },
+  inputContainer:{
+    width:350,
+    borderTopWidth:1,
+    borderBottomWidth:1,
+    borderLeftWidth:1,
+    borderRightWidth:1,
+    flex:1,
+    justifyContent:'space-evenly'
   },
   input: {
     borderTopWidth: 1,
@@ -82,8 +97,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     borderTopWidth: 10,
     borderColor: 'black',
   },

@@ -37,13 +37,32 @@ const App: () => React$Node = () => {
 
   return (
     <View style={styles.container}>
-      <View>
+      <View
+        style={{borderColor: 'black', borderBottomWidth: 2, borderTopWidth: 7}}>
         <View>
           <Image source={Logo} style={styles.logo} />
         </View>
         <View>
           <Text>SIGN IN</Text>
         </View>
+      </View>
+
+      <View>
+        <View>
+          <TextInput style={styles.input} />
+        </View>
+        <View>
+          <TextInput style={styles.input} />
+        </View>
+        <View>
+          <View>
+            <CheckBox />
+          </View>
+          <View>
+            <Text>I Agree to the terms and conditions</Text>
+          </View>
+        </View>
+        <View><TouchableOpacity><Text>LOGIN</Text></TouchableOpacity></View>
       </View>
     </View>
   );
@@ -53,10 +72,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
+    alignItems:'center'
+  },
+  input: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderRadius: 4,
   },
   logo: {
-    width: 200,
-    height: 250,
+    width: 100,
+    height: 100,
     borderTopWidth: 10,
     borderColor: 'black',
   },

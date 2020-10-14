@@ -38,31 +38,58 @@ const App: () => React$Node = () => {
   return (
     <View style={styles.container}>
       <View
-        style={{borderColor: 'black', borderBottomWidth: 2, borderTopWidth: 2, alignItems:'center'}}>
+        style={{
+          borderColor: 'black',
+          // borderBottomWidth: 2,
+          // borderTopWidth: 2,
+          alignItems: 'center',
+        }}>
         <View>
           <Image source={Logo} style={styles.logo} />
         </View>
         <View>
-          <Text style={{fontSize:40  }}>SIGN IN</Text>
+          <Text style={{fontSize: 40}}>SIGN IN</Text>
         </View>
       </View>
 
       <View style={styles.inputContainer}>
-        <View>
-          <TextInput placeholder="Username" style={styles.input} />
+        <View style={{}}>
+          <View style={{marginBottom:20}}>
+            <TextInput placeholder="Username" 
+            style={styles.input} />
+          </View>
+          <View>
+            <TextInput
+              secureTextEntry={true}
+              placeholder="Password"
+              style={styles.input}
+            />
+          </View>
         </View>
-        <View>
-          <TextInput secureTextEntry={true} placeholder="Password" style={styles.input} />
-        </View>
-        <View>
+        <View style={styles.check}>
           <View>
             <CheckBox />
           </View>
-          <View>
+          <View style={{marginTop: 6}}>
             <Text>I Agree to the terms and conditions</Text>
           </View>
         </View>
-        <View style={styles.button}><TouchableOpacity><Text style={{textAlign:'center',color:'white'}}>LOGIN</Text></TouchableOpacity></View>
+        <View style={styles.button}>
+          <TouchableOpacity>
+            <Text style={{textAlign: 'center', color: 'white'}}>LOGIN</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.facebook}>
+          <TouchableOpacity>
+            <Text style={{textAlign: 'center', color: 'white'}}>LOGIN with Facebook</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.google}>
+
+        <TouchableOpacity>
+            <Text style={{textAlign: 'center', color: 'white'}}>LOGIN with Google</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -72,22 +99,39 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    alignItems:'center',
-    justifyContent:'space-evenly'
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
   },
-  button:{
-    padding:20,
-    borderRadius:10,
-    backgroundColor:'red'
+  facebook:{
+    // flex:1,
+    padding: 15,
+    borderRadius: 10,
+    backgroundColor: 'blue',
   },
-  inputContainer:{
-    width:350,
-    borderTopWidth:1,
-    borderBottomWidth:1,
-    borderLeftWidth:1,
-    borderRightWidth:1,
-    flex:1,
-    justifyContent:'space-evenly'
+  google:{
+    // flex:1,
+    padding:15,
+    borderRadius: 10,
+    backgroundColor: 'green',    
+  },
+  check: {
+    // flex:1,
+    flexDirection:'row'
+  },
+  button: {
+    // flex:1,
+    padding: 15,
+    borderRadius: 10,
+    backgroundColor: 'red',
+  },
+  inputContainer: {
+    width: 350,
+    // borderTopWidth: 1,
+    // borderBottomWidth: 1,
+    // borderLeftWidth: 1,
+    // borderRightWidth: 1,
+    flex: 1,
+    justifyContent: 'space-evenly',
   },
   input: {
     borderTopWidth: 1,
@@ -95,6 +139,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderRightWidth: 1,
     borderRadius: 4,
+    borderColor:'grey'
   },
   logo: {
     width: 150,

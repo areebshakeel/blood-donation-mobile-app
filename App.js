@@ -56,13 +56,15 @@ const App: () => React$Node = () => {
         <View style={{}}>
           <View style={{marginBottom:20}}>
             <TextInput placeholder="Username" 
-            style={styles.input} />
+            style={styles.input}
+            onChangeText={(value)=>setEmail(value)} />
           </View>
           <View>
             <TextInput
               secureTextEntry={true}
               placeholder="Password"
               style={styles.input}
+              onChangeText={(value)=>setPassword(value)}
             />
           </View>
         </View>

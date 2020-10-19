@@ -29,7 +29,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Login: () => React$Node = () => {
+const Login= (props) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   console.log(password);
@@ -78,7 +78,7 @@ const Login: () => React$Node = () => {
         </View>
         <View style={{flex:0.5, justifyContent:'space-evenly'}}>
         <View style={styles.button}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>props.navigation.navigate('Signup')}>
             <Text style={{textAlign: 'center', color: 'white'}}>LOGIN</Text>
           </TouchableOpacity>
         </View>

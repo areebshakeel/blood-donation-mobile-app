@@ -19,7 +19,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
+import CheckBox from '@react-native-community/checkbox'
 
 import {
   Header,
@@ -111,22 +111,29 @@ const Signup= (props)=> {
                 marginTop:20
               }}>
               <View style={styles.facebook}>
-                <TouchableOpacity style={{flex:1,flexDirection:'row',justifyContent:'center'}}> 
-                <Icon.Button
+                <TouchableOpacity style={{flex:1,flexDirection:'row',justifyContent:'space-evenly'}}> 
+                <Icon
             name="facebook"
-            backgroundColor="blue"
+            color='white'
+            size={30}
             onPress={() => alert('Login with Facebook')}>
-          </Icon.Button>
+          </Icon>
                   <Text style={{textAlign: 'center', color: 'white'}}>
-                    Signup
+                    Facebook
                   </Text>
                 </TouchableOpacity>
               </View>
               <View><Text>  </Text></View>
               <View style={styles.google}>
-                <TouchableOpacity>
+                <TouchableOpacity style={{flex:1,flexDirection:'row',justifyContent:'space-evenly', alignItems:'center'}}>
+                <Icon
+            name="google"
+            color='white'
+            size={30}
+            onPress={() => alert('Login with Facebook')}>
+          </Icon>
                   <Text style={{textAlign: 'center', color: 'white'}}>
-                    Signup with Google
+                    Google
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -158,7 +165,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 8,
     borderRadius: 30,
-    backgroundColor: 'green',
+    backgroundColor: 'maroon',
   },
   check: {
     // flex:1,

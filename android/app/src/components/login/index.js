@@ -20,6 +20,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import {AccessToken} from 'react-native-fbsdk'
 
 import {
   Header,

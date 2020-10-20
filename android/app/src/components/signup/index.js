@@ -28,8 +28,10 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Signup: () => React$Node = () => {
+
+const Signup= (props)=> {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   console.log(password);
@@ -54,7 +56,7 @@ const Signup: () => React$Node = () => {
         </View>
 
         <View style={styles.inputContainer}>
-          <View style={{flex: 0.6, justifyContent: 'space-between'}}>
+          <View style={{flex: 1, justifyContent: 'space-between'}}>
             <View style={{}}>
               <TextInput
                 placeholder="First name"
@@ -93,9 +95,9 @@ const Signup: () => React$Node = () => {
               <Text>I Agree to the terms and conditions</Text>
             </View>
           </View>
-          <View style={{flex: 0.5, justifyContent: 'space-evenly'}}>
+          <View style={{flex:1, flexDirection:'column', justifyContent: 'space-evenly'}}>
             <View style={styles.button}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=> props.navigation.navigate('Login')}>
                 <Text style={{textAlign: 'center', color: 'white'}}>
                   SIGN UP
                 </Text>
@@ -106,14 +108,21 @@ const Signup: () => React$Node = () => {
                 flex: 0.4,
                 flexDirection: 'row',
                 justifyContent: 'space-around',
+                marginTop:20
               }}>
               <View style={styles.facebook}>
-                <TouchableOpacity>
+                <TouchableOpacity style={{flex:1,flexDirection:'row',justifyContent:'center'}}> 
+                <Icon.Button
+            name="facebook"
+            backgroundColor="blue"
+            onPress={() => alert('Login with Facebook')}>
+          </Icon.Button>
                   <Text style={{textAlign: 'center', color: 'white'}}>
-                    Signup with Facebook
+                    Signup
                   </Text>
                 </TouchableOpacity>
               </View>
+              <View><Text>  </Text></View>
               <View style={styles.google}>
                 <TouchableOpacity>
                   <Text style={{textAlign: 'center', color: 'white'}}>
@@ -140,14 +149,14 @@ const styles = StyleSheet.create({
   facebook: {
     flex: 1,
     justifyContent: 'center',
-    padding: 10,
+    padding: 8,
     borderRadius: 30,
     backgroundColor: 'blue',
   },
   google: {
     flex: 1,
     justifyContent: 'center',
-    padding: 10,
+    padding: 8,
     borderRadius: 30,
     backgroundColor: 'green',
   },
@@ -160,6 +169,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 30,
     backgroundColor: 'red',
+    marginTop:20
   },
   inputContainer: {
     width: 350,

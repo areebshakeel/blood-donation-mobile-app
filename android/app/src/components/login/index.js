@@ -36,6 +36,7 @@ const Login= (props) => {
   console.log(email);
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <View
         style={{
@@ -76,12 +77,13 @@ const Login= (props) => {
             <Text>I Agree to the terms and conditions</Text>
           </View>
         </View>
-        <View style={{flex:0.5, justifyContent:'space-evenly'}}>
+        <View style={{flex:1, justifyContent:'space-evenly'}}>
         <View style={styles.button}>
           <TouchableOpacity onPress={()=>props.navigation.navigate('Signup')}>
             <Text style={{textAlign: 'center', color: 'white'}}>LOGIN</Text>
           </TouchableOpacity>
         </View>
+        <View stye={{flex:1,flexDirection:'row',justifyContent:'space-evenly'}}> 
         <View style={styles.facebook}>
           <TouchableOpacity>
             <Text style={{textAlign: 'center', color: 'white'}}>LOGIN with Facebook</Text>
@@ -94,14 +96,16 @@ const Login= (props) => {
           </TouchableOpacity>
         </View>
         </View>
+        </View>
       </View>
     </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
@@ -142,12 +146,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderLeftWidth: 1,
     borderRightWidth: 1,
-    borderRadius: 4,
+    borderRadius: 30,
     borderColor:'grey'
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
     borderTopWidth: 10,
     borderColor: 'black',
   },
@@ -159,7 +163,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.black,
   },
   sectionContainer: {
     marginTop: 32,

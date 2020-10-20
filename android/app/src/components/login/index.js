@@ -86,7 +86,11 @@ const Login= (props) => {
         </View>
         <View stye={{flex:1,flexDirection:'row',justifyContent:'space-evenly'}}> 
         <View style={styles.facebook}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={
+                AccessToken.getCurrentAccessToken().then(
+                  (data) => {
+                    console.log(data.accessToken.toString())
+                  }\>
             <Text style={{textAlign: 'center', color: 'white'}}>LOGIN with Facebook</Text>
           </TouchableOpacity>
         </View>

@@ -111,7 +111,7 @@ const Signup= (props)=> {
                 marginTop:20
               }}>
               <View style={styles.facebook}>
-                <TouchableOpacity style={{flex:1,flexDirection:'row',justifyContent:'space-evenly'}}> 
+                <TouchableOpacity style={{flex:1,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}> 
                 <Icon
             name="facebook"
             color='white'

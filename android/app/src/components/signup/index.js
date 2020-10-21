@@ -19,7 +19,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import CheckBox from '@react-native-community/checkbox'
+import CheckBox from '@react-native-community/checkbox';
 
 import {
   Header,
@@ -30,8 +30,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
-const Signup= (props)=> {
+const Signup = (props) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   console.log(password);
@@ -95,9 +94,15 @@ const Signup= (props)=> {
               <Text>I Agree to the terms and conditions</Text>
             </View>
           </View>
-          <View style={{flex:1, flexDirection:'column', justifyContent: 'space-evenly'}}>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'column',
+              justifyContent: 'space-evenly',
+            }}>
             <View style={styles.button}>
-              <TouchableOpacity onPress={()=> props.navigation.navigate('Login')}>
+              <TouchableOpacity
+                onPress={() => props.navigation.navigate('Login')}>
                 <Text style={{textAlign: 'center', color: 'white'}}>
                   SIGN UP
                 </Text>
@@ -108,30 +113,42 @@ const Signup= (props)=> {
                 flex: 0.4,
                 flexDirection: 'row',
                 justifyContent: 'space-around',
-                marginTop:20
+                marginTop: 20,
               }}>
               <View style={styles.facebook}>
-                <TouchableOpacity style={{flex:1,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}> 
-                <Icon
-            name="facebook"
-            color='white'
-            size={30}
-            onPress={() => alert('Login with Facebook')}>
-          </Icon>
+                <TouchableOpacity
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    justifyContent: 'space-evenly',
+                    alignItems: 'center',
+                  }}>
+                  <Icon
+                    name="facebook"
+                    color="white"
+                    size={30}
+                    onPress={() => alert('Login with Facebook')}></Icon>
                   <Text style={{textAlign: 'center', color: 'white'}}>
                     Facebook
                   </Text>
                 </TouchableOpacity>
               </View>
-              <View><Text>  </Text></View>
+              <View>
+                <Text> </Text>
+              </View>
               <View style={styles.google}>
-                <TouchableOpacity style={{flex:1,flexDirection:'row',justifyContent:'space-evenly', alignItems:'center'}}>
-                <Icon
-            name="google"
-            color='white'
-            size={30}
-            onPress={() => alert('Login with Facebook')}>
-          </Icon>
+                <TouchableOpacity
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    justifyContent: 'space-evenly',
+                    alignItems: 'center',
+                  }}>
+                  <Icon
+                    name="google"
+                    color="white"
+                    size={30}
+                    onPress={() => alert('Login with Facebook')}></Icon>
                   <Text style={{textAlign: 'center', color: 'white'}}>
                     Google
                   </Text>
@@ -176,7 +193,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 30,
     backgroundColor: 'red',
-    marginTop:20
+    marginTop: 20,
   },
   inputContainer: {
     width: 350,
